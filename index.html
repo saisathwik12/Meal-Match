@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-image: url("tasty-bruschetta-raw-farfalle-pasta-fresh-ingredients-isolated-white-background.jpg");
+            background-size: cover;
+        }
+        h1{
+            text-align: center;
+            margin: 50px auto;
+        }
+        #div3{
+            width: fit-content;
+            padding: 50px;
+            margin: 10px auto;
+            margin-top: 100px;
+            font-size: large;
+            border: 1px outset black;
+            border-radius: 10px;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.782);
+        }
+        #div3 *{
+            margin: 10px;
+        }
+        input{
+            padding: 10px;
+            width: 300px;
+            font-size: medium;
+            &:focus{
+                box-shadow: 1px 1px 10px rgb(12, 120, 253);
+            }
+
+        }
+        label{
+            font-size: larger;
+        }
+        #submit{
+            background-color: rgb(59, 128, 255);
+            color: white;
+            font-size: larger;
+            border: 0;
+            width: 320px;
+            &:hover{
+                background-color: rgb(114, 164, 255);
+            }
+        }
+        a{
+            padding-left: 70%;
+            font-size: larger;
+        }
+    </style>
+
+</head>
+<body>
+    <header>
+    <div id="div3">
+
+        <h1>Login</h1>
+        <form action="" id="form1">
+            <label for="username">Username</label><br>
+            <input type="text" name="username" id="username"><br>
+            <label for="password">Password</label><br>
+            <input type="password" name="password" id="password"><br>
+            <input type="submit" id="submit"><br>
+            <a href="register.html">Register?</a>
+        </form>
+        <h3 id="h3"></h3>
+    </div>
+    </header>
+    <script>
+        const username1 = document.getElementById("username")
+        const password1 = document.getElementById("password")
+        const sub = document.getElementById("submit")
+        const form1 = document.getElementById("form1")
+        const h3 = document.getElementById("h3")
+
+        form1.addEventListener("submit", (e) => {
+            e.preventDefault()
+            async function fetchget() {
+                let user = await fetch("http://localhost:3000/users")
+                let get = await user.json()
+                console.log(get)
+                let found = false
+                for(i of get){
+                    let usndata = i.username
+                    let passdata = i.password
+                    if(username1.value.trim().toLowerCase() === usndata.toLowerCase().trim() && passdata === password1.value){
+                        alert("Login Successful")
+                        location.href = "meal.html"
+                        found = true
+                        break
+                    }
+                }
+                if(!found){
+                    alert("Invalid Username or Password")
+                }
+            }
+            fetchget()
+            
+            
+        })
+
+
+    </script>
+    
+</body>
+</html>

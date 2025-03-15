@@ -14,7 +14,7 @@
     padding-top: 60px;
     padding-bottom: 60px;
     color: rgb(231, 239, 252);
-    font-size: 90px;
+    font-size: 85px;
     text-align: center;
     font-weight: 800;
 }
@@ -36,6 +36,7 @@
 
 #contact-links{
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
     color: whitesmoke;
     font-size: larger;

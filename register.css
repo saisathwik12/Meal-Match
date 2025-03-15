@@ -1,3 +1,6 @@
+body{
+    background: radial-gradient(ellipse, rgb(29, 29, 29), rgb(60, 54, 54));
+}
 .div1{
     width: fit-content;
     margin: 50px auto;
@@ -15,6 +18,7 @@ input{
     padding: 10px;
     width: 300px;
     font-size: medium;
+    background-color: rgb(200, 200, 200);
     &:focus{
         box-shadow: 1px 1px 10px rgb(12, 120, 253);
     }
@@ -26,12 +30,13 @@ input{
 }
 form h1{
     text-align: center;
-    color: rgb(38, 38, 38);
+    color: rgb(233, 233, 233);
     margin: 20px;
     
 }
 label{
     font-size: larger;
+    color: whitesmoke;
 }
 select{
     font-size: large;
@@ -56,7 +61,7 @@ select{
     .div1{
         max-width: fit-content;
         margin: 50px auto;
-        border: 1px outset black;
+        border: 1px outset rgb(234, 234, 234);
         border-radius: 10px;
         box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.782);
     }

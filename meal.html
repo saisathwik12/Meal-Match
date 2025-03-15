@@ -5,20 +5,27 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Meal Match</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link rel="stylesheet" href="mealmatch.css">
 </head>
 
 <body>
-  <header>
-    <h1>Meal Match</h1>
-    <p>Find recipes using ingredients you already have!</p>
-  </header>
 
   <main>
-    <section id="search">
+    <!-- <section id="search">
       <input type="text" id="ingredient-input" placeholder="Enter ingredients (e.g., chicken, tomato)">
       <button id="search-button">Find Recipes</button>
-    </section>
+    </section> -->
+    <nav class="navbar bg-body-tertiary" data-bs-theme="dark">
+      <div class="container-fluid">
+        <a class="navbar-brand fs-3 mx-lg-5" href="#">Meal Match</a>
+        <form class="d-flex flex-fill" role="search" id="search">
+          <input class="form-control me-5" type="search" id="ingredient-input"
+            placeholder="Enter ingredients (e.g., chicken, tomato)" aria-label="Search">
+          <button id="search-button" class="btn btn-outline-success">Search</button>
+        </form>
+      </div>
+    </nav>
 
     <section id="meal-results" class="meal-grid">
       <!-- Meal cards will be dynamically injected here -->
@@ -39,19 +46,19 @@
     const ingredientInput = document.getElementById('ingredient-input');
     const mealResults = document.getElementById('meal-results');
     const mealCardTemplate = document.getElementById('meal-card-template');
-
-    searchButton.addEventListener('click', () => {
+    searchButton.addEventListener('click', (e) => {
+      e.preventDefault()
       const ingredients = ingredientInput.value.trim();
       if (ingredients) {
         fetchMeals(ingredients);
       } else {
         alert('Please enter at least one ingredient.');
       }
+      ingredientInput.value = ""
     });
 
     async function fetchMeals(ingredients) {
       const apiUrl = `https://www.themealdb.com/api/json/v1/1/filter.php?i=${ingredients}`;
-
       try {
         const response = await fetch(apiUrl);
         const data = await response.json();
@@ -78,6 +85,7 @@
       }
     }
   </script>
+
 </body>
 
 </html>

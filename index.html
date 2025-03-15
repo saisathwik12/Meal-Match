@@ -4,65 +4,103 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Meal-Match</title>
+    <link rel="stylesheet" href="home.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 
 <body>
-    <header>
-        <div id="div3">
-
-            <h1>Login</h1>
-            <form action="" id="form1">
-                <label for="username">Username</label><br>
-                <input type="text" name="username" id="username"><br>
-                <label for="password">Password</label><br>
-                <input type="password" name="password" id="password"><br>
-                <input type="submit" id="submit"><br>
-                <div id="anchor">
-                    <a id="guest" href="meal.html">Guest Login</a>
-                    <a id="register" href="register.html">Register Now?</a>
+    <section id="bg-body">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
+            <div class="container-fluid d-flex justify-content-evenly">
+                <a class="navbar-brand ms-lg-5" href="#">Navbar</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-lg-end" id="navbarNavAltMarkup">
+                    <div class="navbar-nav me-lg-5 gap-lg-5">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        <a class="nav-link" href="#features">Features</a>
+                        <a class="nav-link" href="#contact">Contact As</a>
+                        <a class="nav-link" href="login.html">Log In</a>
+                    </div>
                 </div>
-            </form>
-            <h3 id="h3"></h3>
+            </div>
+        </nav>
+
+        <div class="hero">
+            <div style="align-items: center;">
+                <h1 id="hero-title">Meals made easy,<br> with what you already have.</h1>
+                <div style="display: flex; justify-self: center; padding: 10px 0px 100px 0px; gap: 20px;">
+                    <a href="login.html">
+                        <button type="button" class="btn btn-light">Get Started</button>
+                    </a>
+                    <a href="#features">
+                        <button type="button" class="btn btn-dark">Learn More</button>
+                    </a>
+                </div>
+            </div>
         </div>
-    </header>
-    <script>
-        const username1 = document.getElementById("username")
-        const password1 = document.getElementById("password")
-        const sub = document.getElementById("submit")
-        const form1 = document.getElementById("form1")
-        const h3 = document.getElementById("h3")
+        <div id="features" style="text-align: center; padding-top: 50px;">
+            <h2 style="color: whitesmoke;">Key Features</h2>
+            <div id="cards">
+                <div class="card text-bg-secondary" style="width: 30rem;">
+                    <div class="card-body ">
+                        <h5 class="card-title fs-2">Ingredient-Based Recipe Search</h5>
+                        <p class="card-text">This is the core functionality. Users can input a list of ingredients
+                            they already have, and the app utilizes the MealDB API to find recipes that incorporate
+                            those specific ingredients.
+                            This directly addresses the user's need to find meals based on available resources,
+                            minimizing waste and maximizing convenience.</p>
+                    </div>
+                </div>
+                <div class="card text-bg-secondary" style="width: 30rem;">
+                    <div class="card-body ">
+                        <h5 class="card-title fs-2">Detailed Meal Information Display</h5>
+                        <p class="card-text">Beyond just showing meal names and images, the app provides comprehensive
+                            information about each recipe.
+                            This includes a detailed ingredients list with quantities, step-by-step cooking
+                            instructions,
+                            and links to external resources like YouTube tutorials or the full MealDB recipe.
+                            This feature empowers users to confidently prepare the suggested meals.</p>
+                    </div>
+                </div>
+                <div class="card text-bg-secondary" style="width: 30rem;">
+                    <div class="card-body ">
+                        <h5 class="card-title fs-2">Dynamic and Responsive User Interface</h5>
+                        <p class="card-text">The app features a user-friendly interface with meal cards displayed in a
+                            responsive grid layout.
+                            This ensures that the app is accessible and easy to use on various devices, from mobile
+                            phones to desktop computers.
+                            The dynamic display of ingredients, up to 20 items,
+                            ensures that the user recieves all needed information.</p>
+                    </div>
+                </div>
+            </div>
 
-        form1.addEventListener("submit", (e) => {
-            e.preventDefault()
-            async function fetchget() {
-                let user = await fetch("http://localhost:3000/users")
-                let get = await user.json()
-                console.log(get)
-                let found = false
-                for (i of get) {
-                    let usndata = i.username
-                    let passdata = i.password
-                    if (username1.value.trim().toLowerCase() === usndata.toLowerCase().trim() && passdata === password1.value) {
-                        alert("Login Successful")
-                        location.href = "meal.html"
-                        found = true
-                        break
-                    }
-                }
-                if (!found) {
-                    alert("Invalid Username or Password")
-                }
-            }
-            fetchget()
+        </div>
+
+        <footer id="footer">
+            <div id="contact" style=" padding-top: 50px; padding-bottom: 50px;">
+                <h2 style="color: whitesmoke; font-size: 50px; margin-left: 50px; ">Contact us</h2>
+                <div id="contact-links">
+                    <p>Email: <a href="mailto:saisathwikchintha.email@gmail.com">saisathwikchintha.email@gmail.com</a></p>
+                    <p><i class="bi bi-telephone"></i>Phone: <a href="tel:+1-555-123-4567">+1-555-123-4567</a></p>
+                    <p><i class="bi bi-instagram"></i>Instagram: <a href="https://www.instagram.com/your_instagram_handle/" target="_blank">@sai_sathwik</a></p>
+                </div>
+
+            </div>
+        </footer>
+
+    </section>
 
 
-        })
-
-
-    </script>
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>

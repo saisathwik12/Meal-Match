@@ -1,0 +1,58 @@
+#bg-body{
+    background: linear-gradient(to right,rgb(12, 12, 12),rgb(90, 90, 90));
+    
+}
+
+.hero{
+    background: url("pictures/hero-bg.jpg") rgba(0, 0, 0, 0.449);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-blend-mode:darken;
+    height: 100%;
+}
+#hero-title{
+    padding-top: 60px;
+    padding-bottom: 60px;
+    color: rgb(231, 239, 252);
+    font-size: 90px;
+    text-align: center;
+    font-weight: 800;
+}
+#cards{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+.card-body{
+    margin: 20px;
+}
+.card{
+    margin: 10px;
+}
+
+
+
+#contact-links{
+    display: flex;
+    justify-content: space-around;
+    color: whitesmoke;
+    font-size: larger;
+    margin: 30px;
+}
+#contact-links a{
+    text-decoration: none;
+    color: whitesmoke;
+}
+#footer{
+    background-color: rgb(26, 26, 26);
+}
+
+
+
+@media (max-width: 768px) {
+    #hero-title{
+        font-size: 60px;
+    }   
+}

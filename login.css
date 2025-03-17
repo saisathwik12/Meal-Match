@@ -2,6 +2,7 @@ body {
     background: url("pictures/login-bg.jpg") rgba(0, 0, 0, 0.373);
     background-blend-mode: darken;
     background-size: cover;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;
 }
 
 
@@ -42,31 +43,31 @@ label {
 }
 
 #submit {
-    background-color: rgb(59, 128, 255);
+    background-color: rgb(218, 0, 218);
     color: white;
     font-size: larger;
     border: 0;
     width: 320px;
 
     &:hover {
-        background-color: rgb(114, 164, 255);
+        background-color: rgb(255, 71, 255);
     }
 }
 
 #anchor {
     display: flex;
     justify-content: space-between;
-    font-size: larger;
+    font-size:medium;
     text-align: center;
 
 }
 
 #register {
     text-decoration: none;
-    color: black;
-    background-color: rgb(243, 243, 245);
+    color: whitesmoke;
+    background-color: rgb(39, 39, 39);
     padding: 10px;
-    border-radius: 20px;
+    border-radius: 5px;
     border: 1px solid black;
 
     &:hover {
@@ -77,10 +78,10 @@ label {
 
 #guest {
     text-decoration: none;
-    color: black;
-    background-color: rgb(243, 243, 245);
+    color: whitesmoke;
+    background-color: rgb(39, 39, 39);
     padding: 10px;
-    border-radius: 20px;
+    border-radius: 5px;
     border: 1px solid black;
 
     &:hover {

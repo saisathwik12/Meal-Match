@@ -1,16 +1,17 @@
-#bg-body{
-    background: linear-gradient(to right,rgb(12, 12, 12),rgb(90, 90, 90));
-    
+#bg-body {
+    background: linear-gradient(to right, rgb(12, 12, 12), rgb(90, 90, 90));
+
 }
 
-.hero{
+.hero {
     background: url("pictures/hero-bg.jpg") rgba(0, 0, 0, 0.449);
     background-size: cover;
     background-repeat: no-repeat;
-    background-blend-mode:darken;
+    background-blend-mode: darken;
     height: 100%;
 }
-#hero-title{
+
+#hero-title {
     padding-top: 60px;
     padding-bottom: 60px;
     color: rgb(231, 239, 252);
@@ -18,23 +19,34 @@
     text-align: center;
     font-weight: 800;
 }
-#cards{
+
+#cards {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     padding-top: 50px;
     padding-bottom: 50px;
 }
-.card-body{
+
+.card-body {
     margin: 20px;
 }
-.card{
+
+.card {
     margin: 10px;
+    cursor: pointer;
+    transition: transform 0.5s ease;
+
+    &:hover {
+        transform: scale(1.05);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
 }
 
 
 
-#contact-links{
+
+#contact-links {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -42,18 +54,20 @@
     font-size: larger;
     margin: 30px;
 }
-#contact-links a{
+
+#contact-links a {
     text-decoration: none;
     color: whitesmoke;
 }
-#footer{
+
+#footer {
     background-color: rgb(26, 26, 26);
 }
 
 
 
 @media (max-width: 768px) {
-    #hero-title{
+    #hero-title {
         font-size: 60px;
-    }   
+    }
 }

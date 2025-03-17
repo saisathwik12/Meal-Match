@@ -1,5 +1,5 @@
 body {
-    background:  url(pictures/meal-bg.jpg) rgba(0, 0, 0, 0.482);
+    background:  url(pictures/meal-bg.jpg) rgba(0, 0, 0, 0.252);
     background-blend-mode: darken;
     background-size: cover;
     font-family: Georgia, serif;
@@ -26,6 +26,12 @@ body {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     text-align: center;
     padding: 20px;
+    transition: transform 0.5s ease;
+
+    &:hover {
+        transform: scale(1.05);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
   }
 
   .meal-image {
@@ -37,6 +43,10 @@ body {
     margin: 15px 0;
     font-size: 1.2rem;
     color: rgb(38, 38, 38);
+  }
+  #meal-results p{
+    color: whitesmoke;
+    font-size: xx-large;
   }
 
   .meal-video-link {
